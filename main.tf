@@ -13,8 +13,7 @@ resource "aws_efs_file_system" "default" {
   tags                            = "${module.label.tags}"
   encrypted                       = "${var.encrypted}"
   performance_mode                = "${var.performance_mode}"
-  provisioned_throughput_in_mibps = "${var.provisioned_throughput_in_mibps}"
-  throughput_mode                 = "${var.throughput_mode}"
+  throughput_mode                 = "bursting"
 }
 
 resource "aws_efs_mount_target" "default" {
